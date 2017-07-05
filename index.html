@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.css">
+  <style>
+    body { 
+      padding-top:40px;
+    }
+    .modal {
+      transition: all .2s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+	<div id="root" class="container">
+    <message title="Hello World" body="This is the content"></message>
+
+    <button class="button" @click="showModal = true">Modal me</button>
+    <modal v-if="showModal" @close="showModal = false">
+      <p>So this here is the popup text. Slick as shit man.</p>
+    </modal>
+    
+    <tabs>
+      <tab name="About Us" :selected="true">
+        <h1>Content For About Us</h1>
+      </tab>
+      <tab name="About Our Culture">
+        <h1>Content For About Our Culture</h1>
+      </tab>
+      <tab name="About Our Vision">
+        <h1>Content For About Our Vision</h1>
+      </tab>
+    </tabs>
+	</div>	
+
+	<script src="https://unpkg.com/vue"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
